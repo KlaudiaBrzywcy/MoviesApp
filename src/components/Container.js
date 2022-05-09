@@ -13,7 +13,7 @@ const Container = () => {
     const [state, setState] = useState ({
         searchedValue: '',
         results: [],
-        selected: {}
+        
     });
 
     const searchMovie = (e) => {

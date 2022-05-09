@@ -1,36 +1,26 @@
 import React, {useState} from "react";
 import './Result.css';
-import axios from "axios";
+
 import MovieCard from "./MovieCard";
 
-const key = 'a82d2d62';
-const URL = `http://www.omdbapi.com/?apikey=${key}`
+
 
 
 const Result = ({result}) => {
     
     const [state, setState] = useState ({
-       isOpen: false
+       isOpen: false,
+       movieResults :{}
     }); 
 
     
     const openMovieCard = (id) => {
+     
         console.log(id)
         setState(
         {isOpen: true}
         )
-        console.log(state)
-
-        const fetchMovieData = () => {
-            axios.get(URL + '&i='+ `${result.imdbID}`)
-            .then(({data}) => {
-                //  console.log(data.Title) 
-                 let movieData = data
-                 console.log(movieData)
-            })
-       }
-
-       fetchMovieData()
+        
     }
 
     const closeMovieCard = (id) => {
