@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from "react";
 import './MovieCard.css';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 
 const key = 'a82d2d62';
@@ -43,7 +45,11 @@ const MovieCard = ({result, closeMovieCard}) => {
             <div className="content">
                 <h2>{Title}</h2>
                 {/* <h3>{result.imdbID}</h3> */}
+                <div>
                 <h3>Rating on IMDb:{imdbRating}</h3>
+                <FontAwesomeIcon icon={faStar} />
+                </div>
+                
                 <h3>Released: {Released}</h3>
                 <div className="movie-card-poster-container">
                 <img src={Poster} alt="Poster of selected movie" />

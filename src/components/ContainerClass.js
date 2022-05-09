@@ -19,7 +19,7 @@ class ContainerClass extends React.Component {
         this.state = {
             searchedValue: '',
             results: [],
-            selected: {},
+            
             fetchSuccess: false,
             searchIsDone: false,
             isPending : false  
@@ -30,7 +30,7 @@ class ContainerClass extends React.Component {
         if(e.key === 'Enter') {
           axios.get(URL + '&s=' + this.state.searchedValue)
           .then(({data})=> {
-            console.log(data)
+            // console.log(data)
             let apiResults = data.Search;
             // let apiResponse =  data.Response
             // console.log(apiResults);
@@ -42,7 +42,7 @@ class ContainerClass extends React.Component {
                 return (
                   { results: apiResults, fetchSuccess : true, searchIsDone : true})
               })
-            
+              
           })
           .catch(err => {
             console.log(err)
@@ -51,9 +51,10 @@ class ContainerClass extends React.Component {
               {fetchSuccess: false, searchIsDone : false} 
             )
           })
-          console.log(this.state.fetchSuccess)
+          
         })
         } 
+        
     }
 
     inputHandler = (e) => {
@@ -73,6 +74,7 @@ class ContainerClass extends React.Component {
           <Search inputHandler= {this.inputHandler} searchMovie={this.searchMovie}/>  
           
           {(this.state.fetchSuccess && this.state.searchIsDone) ? <Results results={this.state.results} /> : <StarterDiv/> }
+          
           {/* {(typeof this.state.selected.Title != 'undefined') ? <MovieCard selected={this.state.selected} closeMovieCard={this.closeMovieCard}/> : false} */}
           
           
