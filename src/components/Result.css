@@ -1,0 +1,22 @@
+.result {
+    width: calc(100%/3.2);
+    min-width: 250px;
+    padding: 15px; 
+    background-color: rgb(247, 245, 248);
+    border-radius: 18px;
+    margin: 5px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   cursor: pointer;
+} 
+
+.img-container {
+    height: 80%;
+    width: 100%; 
+}
+
+
+
