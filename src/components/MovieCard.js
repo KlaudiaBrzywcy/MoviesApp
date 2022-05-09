@@ -16,11 +16,9 @@ const MovieCard = ({result, closeMovieCard}) => {
     })
     
     useEffect(() => {
-        axios.get(URL + '&i='+ `${result.imdbID}`)
+        axios.get(URL + '&i='+ `${result.imdbID}` + '&plot=full')
             .then(({data}) => {
-                //  console.log(data.Title) 
-                 
-                // console.log(data)
+                
                 setState(prevState => {
                 
                     return (
@@ -32,13 +30,31 @@ const MovieCard = ({result, closeMovieCard}) => {
     }, []);
 
     console.log(state.fetchData, state.isFetched) 
-    
+    const {
+        Title,
+        Released,
+        Genre,
+        Plot,
+        Poster,
+        imdbRating
+    } = state.fetchData;
     return (
         <section className="movie-card" >
             <div className="content">
-                <h2>{state.fetchData.Title}</h2>
-                <h3>{result.imdbID}</h3>
-                <h4>{state.fetchData.Title}</h4>
+                <h2>{Title}</h2>
+                {/* <h3>{result.imdbID}</h3> */}
+                <h3>Rating on IMDb:{imdbRating}</h3>
+                <h3>Released: {Released}</h3>
+                <div className="movie-card-poster-container">
+                <img src={Poster} alt="Poster of selected movie" />
+                </div>
+                <p>{Plot}</p>
+                <div>{Genre &&
+                            Genre.split(', ').map(g => (
+                                <span className="genre-span" key={g}>{g}</span>
+                            ))}</div>
+
+                
                 
                 
                 <button className="close-card" onClick={() => closeMovieCard(result.imdbID)} >Close</button>

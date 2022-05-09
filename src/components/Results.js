@@ -4,9 +4,6 @@ import './Results.css'
 
 const Results = ({results}) => {
 
-  
-
-
     return (
         <section className="results">
             {results.map(result => (

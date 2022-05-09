@@ -5,7 +5,6 @@ import axios from "axios";
 
 
 const key = 'a82d2d62';
-
 const URL = `http://www.omdbapi.com/?apikey=${key}`
 
 const Container = () => {
