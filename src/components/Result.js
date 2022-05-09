@@ -3,43 +3,48 @@ import './Result.css';
 import axios from "axios";
 import MovieCard from "./MovieCard";
 
-// const openMovieCard = (id) => {
-//     axios(URL + '&i=' + id).then(({data}) => {
-//       let result = data;
-
-//       this.setState(prevState => {
-//         return {...prevState, selected : result}
-//       })
-//     })
-      
-//   }
-
-// const closeMovieCard = () => {
-//   this.setState(prevState => {
-//     return {selected : {}}
-//   })
-// } 
+const key = 'a82d2d62';
+const URL = `http://www.omdbapi.com/?apikey=${key}`
 
 
 const Result = ({result}) => {
     
     const [state, setState] = useState ({
        isOpen: false
-    });
+    }); 
 
     
-    const open = (id) => {
+    const openMovieCard = (id) => {
         console.log(id)
         setState(
         {isOpen: true}
         )
         console.log(state)
 
+        const fetchMovieData = () => {
+            axios.get(URL + '&i='+ `${result.imdbID}`)
+            .then(({data}) => {
+                //  console.log(data.Title) 
+                 let movieData = data
+                 console.log(movieData)
+            })
+       }
+
+       fetchMovieData()
     }
-    
+
+    const closeMovieCard = (id) => {
+        console.log(id) 
+        setState(
+            {isOpen: false}
+        )
+   }
+
+   
+  
     return (
         <React.Fragment>
-        <div className="result" onClick={ () => open(result.imdbID)}>
+        <div className="result" onClick={ () => openMovieCard(result.imdbID)}>
             <div className="img-container">
             <img src={result.Poster} alt='Poster of selected movie' />
             </div>
@@ -49,7 +54,7 @@ const Result = ({result}) => {
             <h4>{result.Year}</h4> 
             </div>    
         </div>
-        {state.isOpen ? < MovieCard/> : null} 
+        {state.isOpen ? < MovieCard result={result} closeMovieCard ={closeMovieCard}/> : null} 
         </React.Fragment>
     )
 } 

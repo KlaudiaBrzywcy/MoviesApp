@@ -1,12 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import './MovieCard.css';
 
-const MovieCard = () => {
+
+
+
+const MovieCard = ({result, closeMovieCard}) => {
+
+    
     return (
         <section className="movie-card">
             <div className="content">
-                <h2>COŚ</h2>
-                <button className="close-card" >Close</button>
+                <h2>{result.Title}</h2>
+                <h3>{result.imdbID}</h3> 
+                <button className="close-card" onClick={() => closeMovieCard(result.imdbID)} >Close</button>
             </div>
         </section>
     )
@@ -14,13 +20,3 @@ const MovieCard = () => {
 
 export default MovieCard;
 
-// const MovieCard = ({selected, closeMovieCard}) => {
-//     return (
-//         <section>
-//             <div className="content">
-//                 <h2>{selected.Title}</h2>
-//                 <button className="close-card" onClick = {closeMovieCard}>Close</button>
-//             </div>
-//         </section>
-//     )
-// } 
