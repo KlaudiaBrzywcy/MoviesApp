@@ -10,10 +10,10 @@ body {
   box-sizing: border-box;
   font-family: 'montserrat', sans-serif;
   background-color: rgb(64, 65, 66);
-  
    
-  
 }
+
+
 
 header {
   padding: 50px 15px 0px;
@@ -21,7 +21,7 @@ header {
 }
 
 h1{
-  color: rgb(217, 57, 81);;
+  color: rgb(217, 57, 81);
   font-size: 50px;
   font-weight: 800; 
   text-align: center;
