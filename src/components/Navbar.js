@@ -1,7 +1,8 @@
 import React from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-import {faImdb} from "@fortawesome/free-brands-svg-icons"
+import { faStar, faHome, faSearch } from "@fortawesome/free-solid-svg-icons";
+import {faImdb} from "@fortawesome/free-brands-svg-icons";
+import NavItem from "./NavItem";
 
 class Navbar extends React.Component {
     constructor (props) {
@@ -11,14 +12,14 @@ class Navbar extends React.Component {
 
     render () {
         return(
-            <div className="nav-container">
-                <div className="nav-brand"><span className="imdb-icon-span"><FontAwesomeIcon icon={faImdb} /></span> Movies App</div>
-                <nav>
-                    {/* <NavItem path={} icon={} name='Home'/>
-                    <NavItem path={} icon={} name='Search'/>
-                    <NavItem path={} icon={} name='Top 100'/> */}
-                </nav>
-            </div>
+            <nav className="nav-container">
+                <div className="nav-logo"><span className="imdb-icon-span"><FontAwesomeIcon icon={faImdb} /></span> Movies App</div>
+                <ul>
+                    <NavItem path={"/"} icon={faHome} name='Home'/>
+                    <NavItem path={"/search"} icon={faSearch} name='Search'/>
+                    <NavItem path={"/top"} icon={faStar} name='Top 100'/>
+                </ul>
+            </nav>
         )
     }
      
