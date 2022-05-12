@@ -10,7 +10,7 @@ const Result = ({result}) => {
     
     const [state, setState] = useState ({
        isOpen: false,
-       movieResults :{}
+       
     }); 
 
     

@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import './App.css';
-import Container from './components/Container';
-import ContainerClass from './components/ContainerClass';
+import AppContainer from './components/AppContainer';
+import ContainerClass from './components/ContainerClassSearch';
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 
 
@@ -9,12 +11,12 @@ import ContainerClass from './components/ContainerClass';
 function App() {
 
   return (
-    <div className="app">
-      <header>
-        <h1>IMDb Movies App</h1>
-      </header>
-      <ContainerClass/>
-    </div>
+    <Router>
+      <div className="app">
+        <Navbar/>
+        <AppContainer/>
+      </div>
+    </Router>  
   );
 }
 

@@ -12,7 +12,7 @@ const key = 'a82d2d62';
 
 const URL = `http://www.omdbapi.com/?apikey=${key}`
 
-class ContainerClass extends React.Component {
+class ContainerClassSearch extends React.Component {
     constructor (props) {
         super (props);
 
@@ -73,14 +73,10 @@ class ContainerClass extends React.Component {
           <main className='main'>
           <Search inputHandler= {this.inputHandler} searchMovie={this.searchMovie}/>  
           
-          {(this.state.fetchSuccess && this.state.searchIsDone) ? <Results results={this.state.results} /> : <StarterDiv/> }
-          
-          {/* {(typeof this.state.selected.Title != 'undefined') ? <MovieCard selected={this.state.selected} closeMovieCard={this.closeMovieCard}/> : false} */}
-          
-          
+          {(this.state.fetchSuccess && this.state.searchIsDone) ? <Results results={this.state.results} /> : <StarterDiv/> }  
         </main>
       )    
     }
 }
 
-export default ContainerClass;
+export default ContainerClassSearch;
