@@ -1,17 +1,14 @@
 import React from "react";
 import Search from './Search';
 import Results from './Results';
-import axios from "axios";
 import Loader from "./Loader";
 import ShowErr from "./ShowErr";
 import StarterDiv from "./StarterDiv";
-import MovieCard from "./MovieCard";
+import MovieCard from "./MovieCard/MovieCard";
+import { fetchMovies } from '../api/fetchMovies';
 
 
-const key = 'a82d2d62';
-
-const URL = `http://www.omdbapi.com/?apikey=${key}`
-
+// TODO rename this name
 class ContainerClassSearch extends React.Component {
     constructor (props) {
         super (props);
@@ -19,16 +16,19 @@ class ContainerClassSearch extends React.Component {
         this.state = {
             searchedValue: '',
             results: [],
-            
+
+            // TODO do you need both fetchSuccess and fetchSuccess?
             fetchSuccess: false,
             searchIsDone: false,
-            isPending : false  
+
+            // TODO this is unused
+            isPending : false
         }
     }
 
     searchMovie = (e) => {
         if(e.key === 'Enter') {
-          axios.get(URL + '&s=' + this.state.searchedValue)
+          fetchMovies(this.state.searchedValue)
           .then(({data})=> {
             // console.log(data)
             let apiResults = data.Search;
@@ -36,30 +36,31 @@ class ContainerClassSearch extends React.Component {
             // console.log(apiResults);
             // console.log(apiResponse)
             // True lub False
-            
+
             this.setState(prevState => {
-                
+
                 return (
                   { results: apiResults, fetchSuccess : true, searchIsDone : true})
               })
-              
+
           })
           .catch(err => {
+            // TODO add error handling (e.g. show that something is broken)
             console.log(err)
           this.setState(prevState => {
             return (
-              {fetchSuccess: false, searchIsDone : false} 
+              {fetchSuccess: false, searchIsDone : false}
             )
           })
-          
+
         })
-        } 
-        
+        }
+
     }
 
     inputHandler = (e) => {
         let searchedValue = e.target.value;
-    
+
         this.setState(prevState => {
           return{ searchedValue: searchedValue}
         });
@@ -68,14 +69,17 @@ class ContainerClassSearch extends React.Component {
 
 
     render() {
-      
+
         return(
           <main className='main'>
-          <Search inputHandler= {this.inputHandler} searchMovie={this.searchMovie}/>  
-          
-          {(this.state.fetchSuccess && this.state.searchIsDone) ? <Results results={this.state.results} /> : <StarterDiv/> }  
+          <Search inputHandler= {this.inputHandler} searchMovie={this.searchMovie}/>
+
+          {(this.state.fetchSuccess && this.state.searchIsDone)
+            ? <Results results={this.state.results} />
+            : <StarterDiv/>
+          }
         </main>
-      )    
+      )
     }
 }
 

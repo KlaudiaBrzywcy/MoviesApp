@@ -1,12 +1,10 @@
 import React, {useState} from 'react';
 import './App.css';
 import AppContainer from './components/AppContainer';
+// TODO Remove unused stuff
 import ContainerClass from './components/ContainerClassSearch';
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router } from 'react-router-dom';
-
-
-
 
 function App() {
 
@@ -16,8 +14,8 @@ function App() {
         <Navbar/>
         <AppContainer/>
       </div>
-    </Router>  
+    </Router>
   );
 }
 
-export default App; 
+export default App;
