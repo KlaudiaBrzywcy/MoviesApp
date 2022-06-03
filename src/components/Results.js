@@ -24,26 +24,6 @@ const Results = ({results}) => {
         ))}
     </section>
     )
-
-    // TODO remove unnecessary comments
-    // if(results !== undefined){
-    //     return (
-
-    //         <section className="results">
-    //             {results.map(result => (
-    //                 <Result key = {result.imdbID} result={result} />
-    //             ))}
-    //         </section>
-    //     )
-    // } else {
-    //     return (
-    //         <section className="results-undefined">
-    //             <p> Couldn't find any movie. Please search again using another search criteria.</p>
-    //             <p className="p-icon"><FontAwesomeIcon icon={faGhost} /></p>
-    //         </section>
-    //     )
-    // }
-
 }
 
 export default Results;

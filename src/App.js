@@ -3,7 +3,7 @@ import './App.css';
 import AppContainer from './components/AppContainer';
 // TODO Remove unused stuff
 import ContainerClass from './components/ContainerClassSearch';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navigation/Navbar';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {

@@ -1,0 +1,20 @@
+.nav-item {
+    margin-right: 40px;
+    
+}
+
+.link {
+    color:  rgb(217, 57, 81);
+}
+
+.link:hover {
+    color:  rgb(246, 123, 142);
+}
+.nav-item :last-child{
+    margin-right: 0; 
+   
+}
+
+.nav-item .nav-item-icon {
+    margin-right: 5px; 
+} 
