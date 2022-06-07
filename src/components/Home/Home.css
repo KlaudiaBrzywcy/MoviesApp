@@ -14,4 +14,50 @@
     left: 50%;
     top: 50%;
     z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 } 
+
+.txt-home-container p {
+    text-align: center;
+    margin-bottom: 0; 
+    font-size: 18px;
+    font-weight: 700;
+    color:  rgb(217, 57, 81); 
+} 
+
+.arrival-btn {
+    margin: 10px;
+    display: block;
+    padding: 6px 25px; 
+    border-radius: 8px;
+    border: none;
+    font-size: medium;
+    cursor: pointer;
+    background-color: rgb(205, 40, 65);
+    color: #fff;
+    transition: 0.4 smooth;
+}
+
+.arrival-btn:hover {
+    background-color: rgb(229, 128, 136);
+}
+
+.trailer-container {
+   background-color:rgb(51, 51, 52);
+   
+}
+
+.trailer {
+    width: 850px;
+    height: 500px;
+    border: 1px solid rgb(38, 38, 39); 
+    -webkit-box-shadow: 0px 0px 18px 23px rgba(32, 32, 33, 1);
+-moz-box-shadow: 0px 0px 18px 23px rgba(32, 32, 33, 1);
+box-shadow: 0px 0px 18px 23px rgba(32, 32, 33, 1);
+}
+
+
