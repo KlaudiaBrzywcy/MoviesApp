@@ -1,6 +1,7 @@
 .home-container {
-    height: 700px;
+    height: 90vh;
     position: relative;
+    background-image: url(https://fandomwire.com/wp-content/uploads/2018/08/Movies-background.png);
 }
 .canvas {
    
@@ -44,6 +45,21 @@
 
 .arrival-btn:hover {
     background-color: rgb(229, 128, 136);
+}
+
+.arrival-header {
+   color:rgb(38, 38, 39); 
+   text-shadow: 0px 0px 12px rgb(52, 49, 50);
+}
+
+.txt-home-container .arrival-p {
+    color: rgb(38, 38, 39);
+    text-align: justify;
+    font-size: 16px; 
+} 
+
+.close {
+    margin-bottom: 40px;
 }
 
 .trailer-container {
