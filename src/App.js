@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import AppContainer from './components/AppContainer';
 // TODO Remove unused stuff
-import ContainerClass from './components/ContainerClassSearch';
+import ContainerClass from './components/Search/ContainerClassSearch';
 import Navbar from './components/Navigation/Navbar';
 import { BrowserRouter as Router } from 'react-router-dom';
 

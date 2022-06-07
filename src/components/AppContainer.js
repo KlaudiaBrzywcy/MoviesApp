@@ -1,14 +1,14 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Home from "./Home";
-import ContainerClassSearch from "./ContainerClassSearch";
-import Top100 from "./Top100";
+import Home from "./Home/Home";
+import ContainerClassSearch from "./Search/ContainerClassSearch";
+import Top100 from "./Top 100/Top100";
 
 class AppContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {}
-    }
+    } 
 
     render() {
         return(

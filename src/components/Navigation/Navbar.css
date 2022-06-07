@@ -6,6 +6,7 @@
     justify-content: center; 
     background-color: rgb(51, 51, 52);
     font-size: 20px;
+    z-index: 1000;
     
     
 }
@@ -17,6 +18,10 @@
     margin-left: 40px;
 }
 
+.nav-ul li:last-child {
+    margin-right: 0;
+} 
+ 
 .nav-logo {
     color: rgb(217, 57, 81);
     display: flex;

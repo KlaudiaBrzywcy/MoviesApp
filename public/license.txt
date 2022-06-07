@@ -1,0 +1,11 @@
+Model Information:
+* title:	VHS
+* source:	https://sketchfab.com/3d-models/vhs-c11a8596c3314677a8b9321e141de275
+* author:	Terizmeh (https://sketchfab.com/Terizmeh)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "VHS" (https://sketchfab.com/3d-models/vhs-c11a8596c3314677a8b9321e141de275) by Terizmeh (https://sketchfab.com/Terizmeh) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

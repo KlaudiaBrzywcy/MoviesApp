@@ -10,10 +10,7 @@
 .link:hover {
     color:  rgb(246, 123, 142);
 }
-.nav-item :last-child{
-    margin-right: 0; 
-   
-}
+
 
 .nav-item .nav-item-icon {
     margin-right: 5px; 
