@@ -1,5 +1,6 @@
 .result {
     width: calc(100%/3.2);
+    height:550px ;
     min-width: 250px; 
     padding: 15px; 
     background-color: rgb(247, 245, 248);
@@ -16,7 +17,21 @@
 .img-container {
     height: 80%;
     width: 100%; 
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
+.img-container img {
+    
+    width: 100%;
+    height: 100%;
+    border-radius:18px ;
+} 
+
+.result h3 {
+ text-align: center;
+ 
+}
 
 

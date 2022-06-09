@@ -11,32 +11,22 @@ import { fetchMovies } from '../../api/fetchMovies';
 // TODO rename this name
 class ContainerClassSearch extends React.Component {
     constructor (props) {
-        super (props);
-
-        this.state = {
-            searchedValue: '',
-            results: [],
-
-            // TODO do you need both fetchSuccess and fetchSuccess?
-            fetchSuccess: false,
-            searchIsDone: false,
-
-            // TODO this is unused
-            isPending : false
-        }
+      super (props);
+      this.state = {
+        searchedValue: '',
+        results: [],
+        fetchSuccess: false,
+        searchIsDone: false,
+      }
     }
 
     searchMovie = (e) => {
         if(e.key === 'Enter') {
           fetchMovies(this.state.searchedValue)
           .then(({data})=> {
-            // console.log(data)
+           
             let apiResults = data.Search;
-            // let apiResponse =  data.Response
-            // console.log(apiResults);
-            // console.log(apiResponse)
-            // True lub False
-
+          
             this.setState(prevState => {
 
                 return (
@@ -64,7 +54,7 @@ class ContainerClassSearch extends React.Component {
         this.setState(prevState => {
           return{ searchedValue: searchedValue}
         });
-        // console.log(this.state.searchedValue)
+       
     }
 
 

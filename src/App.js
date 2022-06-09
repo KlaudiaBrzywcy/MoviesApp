@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './App.css';
+// import './App.css';
 import AppContainer from './components/AppContainer';
 // TODO Remove unused stuff
 import ContainerClass from './components/Search/ContainerClassSearch';

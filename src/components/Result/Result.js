@@ -36,7 +36,7 @@ const Result = ({result}) => {
         <React.Fragment>
         <div className="result" onClick={ () => openMovieCard(result.imdbID)}>
             <div className="img-container">
-            <img src={result.Poster} alt='Poster of selected movie' />
+                <img src={result.Poster} alt='Poster of selected movie' />
             </div>
 
             <h3>{result.Title}</h3>

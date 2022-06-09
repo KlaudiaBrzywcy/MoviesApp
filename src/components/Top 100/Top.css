@@ -1,4 +1,59 @@
+.results-top{
+    background-color:#fff;
+    width: 60%;
+   
+}
 .results-top .result-top {
     height: 200px; 
-    width: 500px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    margin: 15px 10px;
 }
+
+.img-container-top {
+    width: 30%;
+    height: 100%;
+}
+
+.img-container-top img {
+    height: 100%;
+    width: 70%;
+    object-fit: fill; 
+}
+
+.txt-container-top {
+    width: 70%;
+    
+}
+
+.txt-container-top span {
+    color: rgb(217, 57, 81); 
+}
+
+table {
+    border:none ;    
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #b5b8bb8a;
+    border: 1px solid #b5b8bb;
+}
+
+.btn {
+    margin-top:30px ;
+    display: block;
+    padding: 6px 25px; 
+    border-radius: 8px;
+    border: none;
+    font-size: medium;
+    cursor: pointer;
+    background-color: rgb(205, 40, 65);
+    color: #fff;
+    transition: 0.4 smooth;
+}
+
+.btn:hover {
+    background-color: rgb(229, 128, 136);
+}
+
