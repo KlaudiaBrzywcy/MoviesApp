@@ -3,7 +3,7 @@ import axios from "axios";
 import ResultsTopComponent from "./ResultsTopComponent";
 
 // Another api data for top 250 movies
-// const URL = `https://imdb-api.com/en/API/Top250Movies/${process.env.REACT_APP_IMDB_API_KEY}`
+
 const URL = 'https://imdb-api.com/en/API/Top250Movies/k_jo69k1i5/'
 
 class Top100 extends React.Component {
