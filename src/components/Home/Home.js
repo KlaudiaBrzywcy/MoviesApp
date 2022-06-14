@@ -74,10 +74,7 @@ class Home extends React.Component {
                             </Suspense>
                         </Canvas>
                     </React.Fragment>
-                }
-            
-               
-               
+                }   
             </div>
         )
     }
@@ -86,25 +83,3 @@ class Home extends React.Component {
 } 
 
 export default Home;
-
-
-{/* <div className="txt-home-container">
-<h1 className="home-header">Hi there!</h1>
-<p>My favourite movie is </p> 
-<button className="arrival-btn" onClick={this.handleClick}>"Arrival"</button> 
-<p>Let's search for yours!</p>
-{this.state.open && 
-    <div className="trailer-container">
-        <iframe className="trailer" src={this.state.arrivalData.linkEmbed} title="video-player"></iframe>
-    </div>
-}
-</div>
-
-<Canvas ref={this.canvasRef} className="canvas">
-<OrbitControls enableZoom={false}/>
-<ambientLight intensity= {0.5}/>
-<directionalLight position= {[-2,5,2]} intensity={1}/>
-<Suspense fallback={null}>
-    <NewVHS/>
-</Suspense>
-</Canvas> */}
