@@ -2,12 +2,23 @@
     height: 90vh;
     position: relative;
     background-image: url(https://fandomwire.com/wp-content/uploads/2018/08/Movies-background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.canvas {
-   
-    height: 700px;
+
+.canvas-container {
+    height: 90vh;
+    width: 100vw;
     
 }
+.canvas {   
+    
+    height: 700px;    
+} 
 
 .txt-home-container {
     position: absolute;
@@ -79,5 +90,25 @@
 box-shadow: 0px 0px 18px 23px rgba(32, 32, 33, 1);
 }
 
-
+/* media queries */
+@media (max-width: 950px) {
+    .canvas-container{
+        height: 550px;
+    }
+}
+@media (max-width: 820px) {
+    .canvas-container{
+        height: 400px;
+    }
+}
+@media (max-width: 520px) {
+    .canvas-container{
+        height: 300px;
+    }
+}
+@media (max-width: 410px) {
+    .canvas-container{
+        height: 250px;
+    }
+}
 

@@ -38,10 +38,8 @@ const Result = ({result}) => {
             <div className="img-container">
                 <img src={result.Poster} alt='Poster of selected movie' />
             </div>
-
-            <h3>{result.Title}</h3>
-            <div>
-            <h4>{result.Year}</h4>
+            <div className="result-txt-container">
+                <h3>{result.Title} ({result.Year})</h3>
             </div>
         </div>
         {state.isOpen ? < MovieCard result={result} closeMovieCard ={closeMovieCard}/> : null}

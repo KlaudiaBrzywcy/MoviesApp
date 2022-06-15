@@ -45,6 +45,8 @@ class Home extends React.Component {
         background.style.backgroundImage = 'url(https://fandomwire.com/wp-content/uploads/2018/08/Movies-background.png)';
     }
 
+   
+
     render() {
         return (
             <div ref={this.backgroundRef} className="home-container">
@@ -65,14 +67,16 @@ class Home extends React.Component {
                             <button className="arrival-btn" onClick={this.handleClick}>"Arrival"</button> 
                             <p>Let's search for yours!</p>
                         </div>
-                        <Canvas ref={this.canvasRef} className="canvas">
-                            <OrbitControls enableZoom={false}/>
-                            <ambientLight intensity= {0.5}/>
-                            <directionalLight position= {[-2,5,2]} intensity={1}/>
-                            <Suspense fallback={null}>
-                                <NewVHS/>
-                            </Suspense>
-                        </Canvas>
+                        <div className="canvas-container">
+                            <Canvas ref={this.canvasRef} className="canvas" >
+                                <OrbitControls enableZoom={false}/>
+                                <ambientLight intensity= {0.5}/>
+                                <directionalLight position= {[-2,5,2]} intensity={1}/>
+                                <Suspense fallback={null}>
+                                    <NewVHS size={4}/> 
+                                </Suspense>
+                            </Canvas>
+                        </div>
                     </React.Fragment>
                 }   
             </div>

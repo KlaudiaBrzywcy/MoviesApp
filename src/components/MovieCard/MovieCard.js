@@ -20,8 +20,6 @@ const MovieCard = ({result, closeMovieCard}) => {
 
     })
 
-
-
     useEffect(() => {
         axios.get(URL + '&i='+ `${result.imdbID}` + '&plot=full')
             .then(({data}) => {
