@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import PropTypes from 'prop-types';
 import './MovieCard.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faImdb} from "@fortawesome/free-brands-svg-icons"
@@ -80,6 +81,11 @@ const MovieCard = ({result, closeMovieCard}) => {
 
         </section>
     )
+}
+
+MovieCard.propTypes = {
+    result: PropTypes.object,
+    closeMovieCard: PropTypes.func
 }
 
 export default MovieCard;

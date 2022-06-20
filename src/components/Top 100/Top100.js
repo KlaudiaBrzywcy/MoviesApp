@@ -19,7 +19,6 @@ class Top100 extends React.Component {
 
     } 
 
-   
     componentDidMount(){
         axios.get(URL)
         .then(({data}) => {
@@ -34,20 +33,16 @@ class Top100 extends React.Component {
     } 
    
     render() {
-        
-        
         return (
             <main className="main">
                 <h1>TOP Movies!</h1>
                 {this.state.resultsTop.length === 0 ?
                 <Loader info={'Loading Top 250 movies...'}/> :
                 <ResultsTopComponent resultsTop={this.state.resultsTop}/>
-                } 
-                
+                }     
             </main>
         )
-    }
-   
+    }   
 }
 
 export default Top100;

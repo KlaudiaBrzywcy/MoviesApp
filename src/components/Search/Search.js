@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Search.css';
 
 
@@ -15,6 +16,11 @@ const Search = ({inputHandler, searchMovie}) => {
             />
         </section>
     )
+}
+
+Search.propTypes = {
+    inputHandler: PropTypes.func,
+    searchMovie: PropTypes.func,
 }
 
 export default Search;

@@ -12,9 +12,9 @@ class Home extends React.Component {
 
     constructor(props){
         super(props);
-        this.backgroundRef= React.createRef();
-        this.canvasRef= React.createRef();
-        this.state ={open:false, arrivalData: {}}
+        this.backgroundRef = React.createRef();
+        this.canvasRef = React.createRef();
+        this.state = {open:false, arrivalData: {}}
     }
 
     componentDidMount() {

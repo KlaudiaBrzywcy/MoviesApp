@@ -1,11 +1,8 @@
 import React, {useState} from "react";
 import './Result.css';
-
+import PropTypes from 'prop-types';
 import MovieCard from "../MovieCard/MovieCard";
 
-
-
-// TODO proptypes
 const Result = ({result}) => {
 
     const [state, setState] = useState ({
@@ -45,6 +42,10 @@ const Result = ({result}) => {
         {state.isOpen ? < MovieCard result={result} closeMovieCard ={closeMovieCard}/> : null}
         </React.Fragment>
     )
+}
+
+Result.propTypes = {
+    result: PropTypes.object,
 }
 
 export default Result;
