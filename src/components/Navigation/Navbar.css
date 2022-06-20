@@ -32,3 +32,64 @@
 .imdb-icon-span {
     margin-right: 10px;
 }
+
+.mobile {
+    display: none;
+}
+
+.hamburger-icon {
+    color:rgb(217, 57, 81);
+    font-size: 36px;
+    margin-right: 20px;
+    
+}
+
+/* media queries */
+@media (max-width: 800px){
+    .normal {
+        display: none;
+    }
+    .mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+       
+    }
+    .nav-container {
+        justify-content: flex-end;
+         
+    }
+
+    .nav-ul {
+        flex-direction: column;
+        margin: 20px 0 20px 0;
+        align-items: center;
+
+    }
+    .nav-ul li {
+        margin-bottom: 20px;
+    }
+    .hamburger-header-container{
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+    }
+    .hamburger-icon {
+        align-self: flex-end;
+    
+    }
+    .nav-logo {
+        align-self: flex-start;
+        margin-left: 18px;
+    }
+    .nav-items-container {
+       width: 100vw;
+       height: 100vh;
+       border-top: 1px solid rgb(217, 57, 81);
+       margin-top: 30px;
+      
+    }
+   
+    
+}
