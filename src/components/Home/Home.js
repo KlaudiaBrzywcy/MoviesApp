@@ -27,7 +27,6 @@ class Home extends React.Component {
         
     }
    
-
     handleClick = () => {
         
         this.setState({open:true});
@@ -45,9 +44,9 @@ class Home extends React.Component {
         background.style.backgroundImage = 'url(https://fandomwire.com/wp-content/uploads/2018/08/Movies-background.png)';
     }
 
-   
 
     render() {
+        
         return (
             <div ref={this.backgroundRef} className="home-container">
                 {this.state.open ? 
