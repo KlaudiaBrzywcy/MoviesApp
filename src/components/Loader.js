@@ -1,18 +1,15 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-class Loader extends React.Component {
-   
+const Loader = ({ info }) => {
+  return (
+    <div className="ui active dimmer">
+      <div className="ui text loader">{info || "Loading..."}</div>
+    </div>
+  );
+};
 
-    render () { 
-        const info = this.props.info
-        return (
-            
-            <div className="ui active dimmer">
-                <div className="ui text loader">{this.props.info || 'Loading...' }</div>
-            </div>
-           
-        )
-    }
-}
-
+Loader.propTypes = {
+  info: PropTypes.string,
+};
 export default Loader;

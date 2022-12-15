@@ -1,88 +1,100 @@
-import React, {Suspense} from "react";
-import {Canvas} from "@react-three/fiber";
-import { OrbitControls} from "@react-three/drei";
-import axios from 'axios';
+import React, { Suspense, useRef, useState, useEffect } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import axios from "axios";
 import "./Home.css";
 import NewVHS from "./NewVHS";
 
+const arrivalURL = "https://imdb-api.com/en/API/Trailer/k_jo69k1i5/tt2543164";
 
-const arrivalURL = 'https://imdb-api.com/en/API/Trailer/k_jo69k1i5/tt2543164'
+const Home = () => {
+  const backgroundRef = useRef();
+  const canvasRef = useRef();
+  const [open, setOpen] = useState(false);
+  const [arrivalData, setArrivalData] = useState({});
 
-class Home extends React.Component {
+  //   useEffect(() => {
+  //     (async () => {
+  //       const res = await axios.get(arrivalURL);
+  //       setArrivalData(res.data);
+  //       console.log(res.data);
+  //     })();
+  //   }, []);
+  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-    constructor(props){
-        super(props);
-        this.backgroundRef = React.createRef();
-        this.canvasRef = React.createRef();
-        this.state = {open:false, arrivalData: {}}
-    }
+  const handleClick = () => {
+    setOpen(true);
+    (async () => {
+      const res = await axios.get(arrivalURL);
+      setArrivalData(res.data);
+      console.log(res.data);
+    })();
 
-    componentDidMount() {
-      
-        axios.get(arrivalURL).then((res)=>{
-            console.log(res.data);
-            this.setState({arrivalData: res.data});
-            
-        })
-        
-    }
-   
-    handleClick = () => {
-        
-        this.setState({open:true});
-        const background = this.backgroundRef.current;
-        const canvasRef = this.canvasRef.current;
-        canvasRef.remove();
-        background.style.height ='90vh';
-        background.style.zIndex= '999';
-        background.style.backgroundImage = 'url(https://s.studiobinder.com/wp-content/uploads/2010/03/Arrival-Video-Essay-How-to-Balance-Fear-and-Intrigue-WP.jpg)';
-    }
+    const background = backgroundRef.current;
+    const canvas = canvasRef.current;
+    canvas.remove();
+    background.style.height = "90vh";
+    background.style.zIndex = "999";
+    background.style.backgroundImage =
+      "url(https://s.studiobinder.com/wp-content/uploads/2010/03/Arrival-Video-Essay-How-to-Balance-Fear-and-Intrigue-WP.jpg)";
+  };
+  const handleClose = () => {
+    const background = backgroundRef.current;
+    setOpen(false);
+    background.style.backgroundImage =
+      "url(https://fandomwire.com/wp-content/uploads/2018/08/Movies-background.png)";
+  };
 
-    handleClose = () => {
-        const background = this.backgroundRef.current;
-        this.setState({open:false});
-        background.style.backgroundImage = 'url(https://fandomwire.com/wp-content/uploads/2018/08/Movies-background.png)';
-    }
+  return (
+    <div ref={backgroundRef} className="home-container">
+      {open ? (
+        <div className="txt-home-container">
+          <h1 className="arrival-header">Arrival</h1>
+          <p className="arrival-p">
+            Linguistics professor Louise Banks leads an elite team of
+            investigators when gigantic spaceships touchdown in 12 locations
+            around the world. As nations teeter on the verge of global war,
+            Banks and her crew must race against time to find a way to
+            communicate with the extraterrestrial visitors. Hoping to unravel
+            the mystery, she takes a chance that could threaten her life and
+            quite possibly all of mankind.{" "}
+          </p>
+          <button className="arrival-btn close" onClick={handleClose}>
+            Close
+          </button>
 
-
-    render() {
-        
-        return (
-            <div ref={this.backgroundRef} className="home-container">
-                {this.state.open ? 
-                    <div className="txt-home-container">
-                        <h1 className="arrival-header">Arrival</h1>
-                        <p className="arrival-p">Linguistics professor Louise Banks leads an elite team of investigators when gigantic spaceships touchdown in 12 locations around the world. As nations teeter on the verge of global war, Banks and her crew must race against time to find a way to communicate with the extraterrestrial visitors. Hoping to unravel the mystery, she takes a chance that could threaten her life and quite possibly all of mankind. </p> 
-                        <button className="arrival-btn close" onClick={this.handleClose}>Close</button> 
-                        
-                        <div className="trailer-container">
-                            <iframe className="trailer" src={this.state.arrivalData.linkEmbed} title="video-player"></iframe>
-                        </div>
-                    </div> :
-                    <React.Fragment>
-                        <div className="txt-home-container">
-                            <h1 className="home-header">Hi there!</h1>
-                            <p>My favourite movie is </p> 
-                            <button className="arrival-btn" onClick={this.handleClick}>"Arrival"</button> 
-                            <p>Let's search for yours!</p>
-                        </div>
-                        <div className="canvas-container">
-                            <Canvas ref={this.canvasRef} className="canvas" >
-                                <OrbitControls enableZoom={false}/>
-                                <ambientLight intensity= {0.5}/>
-                                <directionalLight position= {[-2,5,2]} intensity={1}/>
-                                <Suspense fallback={null}>
-                                    <NewVHS size={4}/> 
-                                </Suspense>
-                            </Canvas>
-                        </div>
-                    </React.Fragment>
-                }   
-            </div>
-        )
-    }
-
-    
-} 
+          <div className="trailer-container">
+            <iframe
+              className="trailer"
+              src={arrivalData.linkEmbed}
+              title="video-player"
+            ></iframe>
+          </div>
+        </div>
+      ) : (
+        <React.Fragment>
+          <div className="txt-home-container">
+            <h1 className="home-header">Hi there!</h1>
+            <p>My favourite movie is </p>
+            <button className="arrival-btn" onClick={handleClick}>
+              "Arrival"
+            </button>
+            <p>Let's search for yours!</p>
+          </div>
+          <div className="canvas-container">
+            <Canvas ref={canvasRef} className="canvas">
+              <OrbitControls enableZoom={false} />
+              <ambientLight intensity={0.5} />
+              <directionalLight position={[-2, 5, 2]} intensity={1} />
+              <Suspense fallback={null}>
+                <NewVHS size={4} />
+              </Suspense>
+            </Canvas>
+          </div>
+        </React.Fragment>
+      )}
+    </div>
+  );
+};
 
 export default Home;
