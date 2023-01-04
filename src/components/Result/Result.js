@@ -15,7 +15,7 @@ const Result = ({ result }) => {
   };
 
   return (
-    <React.Fragment>
+    <>
       <div className="result" onClick={openMovieCard}>
         <div className="img-container">
           <img src={result.Poster} alt="Poster of selected movie" />
@@ -29,7 +29,7 @@ const Result = ({ result }) => {
       {isOpen ? (
         <MovieCard result={result} closeMovieCard={closeMovieCard} />
       ) : null}
-    </React.Fragment>
+    </>
   );
 };
 

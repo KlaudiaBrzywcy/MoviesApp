@@ -8,7 +8,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+} 
 
 .canvas-container {
     height: 90vh;
@@ -81,34 +81,64 @@
 
 .trailer-container {
    background-color:rgb(51, 51, 52);
-   /* position: relative;
-   padding-bottom: 56.25%;
-   overflow: hidden;    */
+   position: relative;
+   display: block;
 }
 
 .trailer {
     width: 850px;
-    height: 500px;
+    height: 500px; 
     border: 1px solid rgb(38, 38, 39); 
     -webkit-box-shadow: 0px 0px 18px 23px rgba(32, 32, 33, 1);
     -moz-box-shadow: 0px 0px 18px 23px rgba(32, 32, 33, 1);
     box-shadow: 0px 0px 18px 23px rgba(32, 32, 33, 1);
-    /* overflow: hidden; */
-    /* align-self: center;
-    /* position: absolute;  */
-    /* top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; */
 }
 
-/* media queries */
-@media (max-width: 950px) {
-    
+.mobile-poster-container {
+    display: none; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+.poster-img-wrapper {
+    object-fit: contain; 
+    display: flex;  
+    align-items: center;
+    justify-content: center; 
+    margin-bottom: 5%;
 }
+.poster {
+    width: 60%;
+}
+
+.trailer-btn {
+    display: block;
+    margin: auto;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+/* media queries */
+@media(max-width:1024px){
+   .mobile-poster-container{
+    display: flex;
+}
+.trailer-container{
+    display: none;
+}
+.poster {
+    display: none;
+}
+ 
+}
+
 @media (max-width: 950px) {
     .canvas-container{
         height: 550px;
+    }
+    .poster {
+        display: block;
     }
 }
 @media (max-width: 820px) {
@@ -116,14 +146,29 @@
         height: 400px;
     }
 }
-@media (max-width: 520px) {
+@media (max-width: 540px) {
     .canvas-container{
         height: 300px;
+    }
+    .poster {
+        width: 50%;
+    }
+
+    .txt-home-container .arrival-p {
+        font-size: 12px;
     }
 }
 @media (max-width: 410px) {
     .canvas-container{
         height: 250px;
+    }
+}
+@media(max-width: 375px) {
+    .poster {
+        display: none;
+    }
+    .close {
+        margin-bottom: 0;
     }
 }
 

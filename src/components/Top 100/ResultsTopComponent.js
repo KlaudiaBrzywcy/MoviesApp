@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types";
 import "./Top.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -27,6 +26,7 @@ const ResultsTopComponent = ({ resultsTop }) => {
                   <a
                     href={`https://www.imdb.com/title/${item.id}/`}
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <button className="btn">Find out more</button>
                   </a>

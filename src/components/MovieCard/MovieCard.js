@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import "./MovieCard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,12 +14,10 @@ const MovieCard = ({ result, closeMovieCard }) => {
   const [isFetched, setIsFetched] = useState(false);
 
   useEffect(() => {
-    axios
-      .get(URL + "&i=" + `${result.imdbID}` + "&plot=full")
-      .then(({ data }) => {
-        setApiData(data);
-        setIsFetched(true);
-      });
+    axios.get(`${URL}&i=${result.imdbID}&plot=full`).then(({ data }) => {
+      setApiData(data);
+      setIsFetched(true);
+    });
   }, []);
 
   const { Title, Released, Genre, Plot, Poster, imdbRating } = apiData;

@@ -1,4 +1,3 @@
-import React from "react";
 import Result from "../Result/Result";
 import PropTypes from "prop-types";
 import NoResults from "./NoResults";
@@ -16,7 +15,7 @@ const ResultsList = ({ results }) => {
 };
 
 ResultsList.propTypes = {
-  results: PropTypes.array.isRequired,
+  results: PropTypes.array,
 };
 
 export default ResultsList;

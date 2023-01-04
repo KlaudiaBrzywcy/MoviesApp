@@ -5,7 +5,7 @@ import axios from "axios";
 import "./Home.css";
 import NewVHS from "./NewVHS";
 
-const arrivalURL = "https://imdb-api.com/en/API/Trailer/k_jo69k1i5/tt2543164";
+const arrivalURL = process.env.REACT_APP_ARRIVAL_URL;
 
 const Home = () => {
   const backgroundRef = useRef();
@@ -13,23 +13,15 @@ const Home = () => {
   const [open, setOpen] = useState(false);
   const [arrivalData, setArrivalData] = useState({});
 
-  //   useEffect(() => {
-  //     (async () => {
-  //       const res = await axios.get(arrivalURL);
-  //       setArrivalData(res.data);
-  //       console.log(res.data);
-  //     })();
-  //   }, []);
-  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-  const handleClick = () => {
-    setOpen(true);
+  useEffect(() => {
     (async () => {
       const res = await axios.get(arrivalURL);
       setArrivalData(res.data);
-      console.log(res.data);
     })();
+  }, []);
 
+  const handleClick = () => {
+    setOpen(true);
     const background = backgroundRef.current;
     const canvas = canvasRef.current;
     canvas.remove();
@@ -57,7 +49,7 @@ const Home = () => {
             Banks and her crew must race against time to find a way to
             communicate with the extraterrestrial visitors. Hoping to unravel
             the mystery, she takes a chance that could threaten her life and
-            quite possibly all of mankind.{" "}
+            quite possibly all of mankind.
           </p>
           <button className="arrival-btn close" onClick={handleClose}>
             Close
@@ -69,6 +61,23 @@ const Home = () => {
               src={arrivalData.linkEmbed}
               title="video-player"
             ></iframe>
+          </div>
+          <div className="mobile-poster-container">
+            <div className="poster-img-wrapper">
+              <img
+                className="poster"
+                src="https://m.media-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_SX300.jpg"
+                alt="movie poster"
+              />
+            </div>
+            <a
+              href={arrivalData.linkEmbed}
+              target="_blank"
+              className="trailer-btn arrival-btn"
+              rel="noopener noreferrer"
+            >
+              Watch trailer
+            </a>
           </div>
         </div>
       ) : (

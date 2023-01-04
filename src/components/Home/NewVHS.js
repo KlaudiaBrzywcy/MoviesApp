@@ -6,28 +6,40 @@ source: https://sketchfab.com/3d-models/vhs-c11a8596c3314677a8b9321e141de275
 title: VHS
 */
 
-import React, { useRef } from 'react';
-import { useGLTF } from '@react-three/drei';
-import './Home.css';
+import React, { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
+import "./Home.css";
 
 export default function Model({ ...props }) {
-  const group = useRef()
-  
-  const { nodes, materials } = useGLTF('/newVHS.gltf')
+  const group = useRef();
+
+  const { nodes, materials } = useGLTF("/newVHS.gltf");
   return (
-    <group ref={group} {...props} dispose={null} onClick={()=>console.log(props.size)}>
-      <group rotation={[-Math.PI / 20, 0, 0]}> 
-        <group rotation={[Math.PI / 2, 0, 0]}> 
+    <group ref={group} {...props} dispose={null}>
+      <group rotation={[-Math.PI / 20, 0, 0]}>
+        <group rotation={[Math.PI / 2, 0, 0]}>
           <group scale={props.size}>
-          <mesh geometry={nodes.defaultMaterial.geometry} material={materials.None} />
-          <mesh geometry={nodes.defaultMaterial_1.geometry} material={materials.None} />
-          <mesh geometry={nodes.defaultMaterial_2.geometry} material={materials.None} />
-          <mesh geometry={nodes.defaultMaterial_3.geometry} material={materials.None} />
+            <mesh
+              geometry={nodes.defaultMaterial.geometry}
+              material={materials.None}
+            />
+            <mesh
+              geometry={nodes.defaultMaterial_1.geometry}
+              material={materials.None}
+            />
+            <mesh
+              geometry={nodes.defaultMaterial_2.geometry}
+              material={materials.None}
+            />
+            <mesh
+              geometry={nodes.defaultMaterial_3.geometry}
+              material={materials.None}
+            />
           </group>
         </group>
       </group>
     </group>
-  )
+  );
 }
 
-useGLTF.preload('/newVHS.gltf')
+useGLTF.preload("/newVHS.gltf");

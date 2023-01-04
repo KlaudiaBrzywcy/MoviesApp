@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import NoResults from "./ResultsList";
 import ResultsList from "./ResultsList";
 import "./Results.css";
 
@@ -9,7 +8,7 @@ const Results = ({ results }) => {
 };
 
 Results.propTypes = {
-  results: PropTypes.array.isRequired,
+  results: PropTypes.array,
 };
 
 export default Results;

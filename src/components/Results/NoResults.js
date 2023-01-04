@@ -6,7 +6,6 @@ const NoResults = () => {
   return (
     <section className="results-undefined">
       <p>
-        {" "}
         Couldn't find any movie. Please search again using another search
         criteria.
       </p>

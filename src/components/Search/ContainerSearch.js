@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Search from "./Search";
 import Results from "../Results/Results";
-import Loader from "../Loader";
-import ShowErr from "./ShowErr";
 import StarterDiv from "./StarterDiv";
-import MovieCard from "../MovieCard/MovieCard";
 import axios from "axios";
 
 const key = process.env.REACT_APP_IMDB_API_KEY;
@@ -18,11 +15,7 @@ const ContainerSearch = () => {
   const onTermSubmit = (term) => {
     axios.get(`${URL}&s=${term}`).then(({ data }) => {
       let apiResults = data.Search;
-      console.log(apiResults);
-      console.log(typeof apiResults);
       setResults(apiResults);
-      console.log(typeof results);
-      console.log(results.length);
       setFetchSuccess(true);
     });
   };
