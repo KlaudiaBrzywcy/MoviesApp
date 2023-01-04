@@ -1,6 +1,6 @@
 # Movies-App
 
-## The App uses the IMDb Api to Search movies and show actual list of Top IMDb 250 movies. I also implemented Three.js element to make the home page more interesting.
+## The App uses the IMDb Api to Search movies and show actual list of Top IMDb 250 movies. I also implemented Three.js element to make the home page more interesting. You will find deployed project here: https://movies-11vguo9xi-klaudiabrzywcy.vercel.app/
 
 ## Tech
 
