@@ -1,6 +1,6 @@
 # Movies-App
 
-## App that uses IMDb Api to Search movies and show actual list of Top IMDb 250 movies. I also implemented Three.js element to make the home page more interesting.
+## The App uses the IMDb Api to Search movies and show actual list of Top IMDb 250 movies. I also implemented Three.js element to make the home page more interesting.
 
 ## Tech
 
